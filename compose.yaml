@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: meixin
+      POSTGRES_USER: meixin
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-local-development-only}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U meixin -d meixin"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    environment:
+      APP_ENV: development
+      DATABASE_URL: postgresql+psycopg://meixin:${POSTGRES_PASSWORD:-local-development-only}@db:5432/meixin
+      SECRET_KEY: ${SECRET_KEY:-local-development-secret-change-me}
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  postgres_data:

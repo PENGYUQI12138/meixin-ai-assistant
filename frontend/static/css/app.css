@@ -1,0 +1,44 @@
+:root {
+  color-scheme: light;
+  --ink: #1f2a44;
+  --muted: #667085;
+  --paper: #fbfcf7;
+  --surface: #ffffff;
+  --line: #e5e9df;
+  --green: #276b55;
+  --green-soft: #e8f3ed;
+  --amber: #b46622;
+  font-family: Inter, "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); line-height: 1.6; }
+.shell { width: min(1080px, calc(100% - 40px)); margin: 0 auto; }
+.site-header { border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, 0.92); }
+.site-header .shell { min-height: 68px; display: flex; align-items: center; gap: 14px; }
+.brand { color: var(--ink); text-decoration: none; font-weight: 750; letter-spacing: .01em; }
+.stage-badge, .status { border-radius: 999px; padding: 3px 10px; font-size: 13px; }
+.stage-badge { background: #eef0f4; color: var(--muted); }
+.hero { padding: 78px 0 54px; max-width: 760px; }
+.eyebrow { margin: 0 0 8px; color: var(--green); font-size: 13px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { font-size: clamp(36px, 6vw, 62px); line-height: 1.1; letter-spacing: -.035em; margin-bottom: 20px; }
+h2 { font-size: 26px; margin-bottom: 0; }
+.intro { color: var(--muted); font-size: 18px; max-width: 680px; }
+.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 22px; }
+.status { background: var(--green-soft); color: var(--green); font-weight: 700; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.card { min-height: 210px; padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
+.card-ready { border-top: 4px solid var(--green); }
+.card-number { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.card h3 { margin: 44px 0 8px; font-size: 21px; }
+.card p { color: var(--muted); margin-bottom: 0; }
+.notice { margin: 32px 0 64px; padding: 20px 22px; border-left: 4px solid var(--amber); background: #fff7ed; border-radius: 4px 12px 12px 4px; }
+.notice p { margin: 4px 0 0; color: #6f4a28; }
+@media (max-width: 760px) {
+  .shell { width: min(100% - 28px, 1080px); }
+  .hero { padding: 52px 0 40px; }
+  .cards { grid-template-columns: 1fr; }
+  .card { min-height: auto; }
+  .card h3 { margin-top: 22px; }
+}

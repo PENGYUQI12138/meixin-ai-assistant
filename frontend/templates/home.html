@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="hero">
+    <p class="eyebrow">美心教育 · 内部行政系统</p>
+    <h1>每天的行政工作，一处完成</h1>
+    <p class="intro">项目基础框架已可运行。学生、排课、签到、课消、缴费和教师统计将按上线顺序逐步开放。</p>
+  </section>
+
+  <section aria-labelledby="progress-title">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">当前进度</p>
+        <h2 id="progress-title">第一阶段：系统基础</h2>
+      </div>
+      <span class="status">进行中</span>
+    </div>
+    <div class="cards">
+      <article class="card card-ready">
+        <span class="card-number">01</span>
+        <h3>系统设计</h3>
+        <p>角色、业务模块、数据流和上线路线已经建立。</p>
+      </article>
+      <article class="card card-ready">
+        <span class="card-number">02</span>
+        <h3>运行骨架</h3>
+        <p>后端、页面、数据库连接和健康检查已经接通。</p>
+      </article>
+      <article class="card">
+        <span class="card-number">03</span>
+        <h3>下一步</h3>
+        <p>导入真实 Excel 样例，开发学生、家长、教师和课程管理。</p>
+      </article>
+    </div>
+  </section>
+
+  <aside class="notice">
+    <strong>说明</strong>
+    <p>当前为工程基础阶段，尚未开放真实业务录入。请勿在此版本录入学生个人信息或缴费数据。</p>
+  </aside>
+{% endblock %}
